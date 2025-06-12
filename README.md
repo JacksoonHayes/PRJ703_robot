@@ -99,7 +99,7 @@ Legacy ESP32 scripts that used **basic color filtering** or simpler detection lo
 
 ## 📸 Demo
 
-*(Insert a GIF or video link here showing object detection and sorting in action)*
+*Coming soon*
 
 ---
 
