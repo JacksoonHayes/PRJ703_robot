@@ -50,10 +50,10 @@ void setup() {
   
   baseServo.attach(10);
   shoulderServo.attach(9);
-  elbowServo.attach(8);
-  wristServo.attach(7);
-  gripperServo.attach(6);
-
+  elbowServo.attach(11);
+  wristServo.attach(12);
+  gripperServo.attach(13);
+  
   fabrik2D.setTolerance(0.5);
   resetServo();
 
@@ -135,13 +135,12 @@ void loop() {
           float elbow = fabrik2D.getAngle(1) * RAD_TO_DEG;
           float wrist = fabrik2D.getAngle(2) * RAD_TO_DEG;
 
-          gripperServo.write(80);
           baseServo.write(constrain(base + 90, 0, 180));
           shoulderServo.write(constrain(-shoulder + 90, 0, 180));
           elbowServo.write(constrain(elbow + 90, 0, 180));
           wristServo.write(constrain(wrist - 90, 0, 180));
           delay(1000);
-          gripperServo.write(10);
+          gripperServo.write(50);
           delay(500);
 
           Serial.println("IK SOLVED, MOVED TO TARGET.");
@@ -159,10 +158,10 @@ void loop() {
 
 void resetServo() {
   baseServo.write(90);
-  shoulderServo.write(100);
-  elbowServo.write(180);
-  wristServo.write(70);
-  gripperServo.write(0);
+  shoulderServo.write(95);
+  elbowServo.write(110);
+  wristServo.write(60);
+  gripperServo.write(90);
 }
 
 void placeObject(String label) {
@@ -181,7 +180,7 @@ void placeObject(String label) {
   // Step 3: Lower elbow and close gripper
   elbowServo.write(150);
   wristServo.write(40);
-  gripperServo.write(50);
+  gripperServo.write(90);
 
   Serial.print("Placed: ");
   Serial.println(label);
