@@ -99,7 +99,10 @@ Legacy ESP32 scripts that used **basic color filtering** or simpler detection lo
 
 ## 📸 Demo
 
-*Coming soon*
+![TinyML Robot Demo](demo/demo.gif)
+
+> Real-time demo of object detection and robotic sorting.
+
 
 ---
 
